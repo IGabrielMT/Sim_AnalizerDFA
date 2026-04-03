@@ -10,3 +10,9 @@ public class PeriodAdapter extends TypeAdapter<Period> {
     public void write(JsonWriter out, Period period) throws IOException {
         out.value(period.toString());
     }
+
+    @Override
+    public Period read(JsonReader in) throws IOException {
+        return Period.parse(in.nextString());
+    }
+}
