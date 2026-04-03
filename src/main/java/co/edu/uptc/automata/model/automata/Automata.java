@@ -5,8 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,5 +19,4 @@ public class Automata {
     private String estadoInicial;
     private List<String> estadosAceptacion;
     private Map<String, Map<String, String>> transiciones;
-
 }
