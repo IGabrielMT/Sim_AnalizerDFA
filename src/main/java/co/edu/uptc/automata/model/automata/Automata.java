@@ -1,4 +1,4 @@
-package co.edu.uptc.automata.model;
+package co.edu.uptc.automata.model.automata;
 
 import java.util.ArrayList;
 import java.util.HashMap;
