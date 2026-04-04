@@ -10,7 +10,14 @@ import java.util.List;
 @Setter
 public class Modelo {
     private List<Automata> automatas;
+    private EvaluadorAutomatas ea;
 
+    public Modelo(){
+        ea = new EvaluadorAutomatas();
+    }
 
+    public boolean evaluarCadena(Automata automata, String cadena){
+        return ea.evaluarCadena(automata, cadena);
+    }
 
 }
