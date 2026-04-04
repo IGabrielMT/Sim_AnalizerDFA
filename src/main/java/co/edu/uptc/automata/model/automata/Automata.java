@@ -11,10 +11,10 @@ import java.util.Map;
 @NoArgsConstructor
 @ToString
 public class Automata {
-
+    private boolean isAFD;
     private List<String> estados;
     private List<String> alfabeto;
     private String estadoInicial;
     private List<String> estadosAceptacion;
-    private Map<String, Map<String, String>> transiciones;
+    private Map<String, Map<String, List<String>>> transiciones;
 }
