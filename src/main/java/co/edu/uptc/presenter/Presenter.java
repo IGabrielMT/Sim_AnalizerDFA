@@ -35,7 +35,6 @@ public class Presenter {
             }
         }
     }
-<<<<<<< HEAD
 
     private void crearAutomata() {
         String nombre = "";
@@ -43,38 +42,6 @@ public class Presenter {
             nombre = view.solicitarEntrada("Ingrese el nombre del autómata:").trim();
             if (nombre.isBlank()) {
                 view.mostrarError("El nombre no puede estar vacío.");
-=======
-    private void verificarCadenaAutomata() {
-        List<Automata> automatas = model.getAutomatas();
-    // Creamos el flujo de nombres
-        List<String> listaMenu = new ArrayList<>(automatas.stream()
-                .map(a -> (automatas.indexOf(a) + 1) + ". " + (a.isAFD() ? "DFA" : "NFA") + " - ID: " + a.hashCode())
-                .toList());
-        // Añadimos la opción de volver
-        listaMenu.add("0. Volver al menú principal");
-        String[] menuAutomatas = listaMenu.toArray(new String[0]);
-        String option = "";
-        while (!option.equals("0")) {
-            option = view.showMessage(menuAutomatas);
-            // Intentamos convertir la opción a un número para buscar en la lista
-            try {
-                int seleccion = Integer.parseInt(option);
-                if (seleccion > 0 && seleccion <= automatas.size()) {
-                    // --- AQUÍ SE ELIGE EL AUTÓMATA ---
-                    Automata elegido = automatas.get(seleccion - 1);
-                    // Pedimos la cadena a evaluar
-                    String cadena = view.showMessage(new String[]{"Ingrese la cadena a evaluar:"});
-                    boolean esValida = model.evaluarCadena(elegido, cadena);
-                    String resultado = esValida ? "¡Cadena ACEPTADA!" : "Cadena RECHAZADA.";
-                    view.showMessage(new String[]{resultado, "Presione Enter para continuar..."});
-                } else if (seleccion != 0) {
-                    view.showMessage(new String[]{"Opción inválida. Intente de nuevo."});
-                }
-            } catch (NumberFormatException e) {
-                if (!option.equals("0")) {
-                    view.showMessage(new String[]{"Por favor, inserte un número válido."});
-                }
->>>>>>> dcb7f1f506c9b64f9201df938951d0d7ec47f160
             }
         }
 
@@ -159,7 +126,7 @@ public class Presenter {
             Map<String, List<String>> porSimbolo = new HashMap<>();
             for (String simbolo : alfabeto) {
                 while (true) {
-                    String destino = view.solicitarEntrada("Transición δ(" + estado + ", " + simbolo + ") = ").trim();
+                    String destino = view.solicitarEntrada("Transición S(" + estado + ", " + simbolo + ") = ").trim();
                     if (destino.isEmpty()) {
                         porSimbolo.put(simbolo, new ArrayList<>());
                         break;
