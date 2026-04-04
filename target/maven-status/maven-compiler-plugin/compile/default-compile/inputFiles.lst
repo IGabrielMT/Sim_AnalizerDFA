@@ -1,5 +1,12 @@
 C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\automata\model\automata\Automata.java
-C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\automata\model\EvaluadorDFA.java
-C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\automata\model\jsonmanager\JSONReader.java
-C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\automata\model\jsonmanager\JSONWriter.java
+C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\automata\model\AutomataRepository.java
+C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\automata\model\EvaluationResult.java
+C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\automata\model\jsonmanager\JSONManager.java
+C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\automata\model\jsonmanager\LocalDateAdapter.java
+C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\automata\model\jsonmanager\PeriodAdapter.java
+C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\automata\model\Model.java
+C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\automata\model\ResultadoEvaluacion.java
+C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\automata\view\IView.java
+C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\automata\view\View.java
 C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\Main.java
+C:\Users\sacap\Documents\Samuel\Universidad\Septimo\LF\Sim_AnalizerDFA\src\main\java\co\edu\uptc\presenter\Presenter.java
