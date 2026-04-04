@@ -83,7 +83,7 @@ public class Presenter {
         }
     }
 
-    public void saveData() {
+    private void saveData() {
         JSONManager.createJSONFileByCollection("src/main/resources/automata.json", model.getAutomatas());
     }
 
