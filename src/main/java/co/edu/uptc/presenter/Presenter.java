@@ -15,6 +15,12 @@ import java.util.List;
 @AllArgsConstructor
 public class Presenter {
     private Modelo model;
+    private View view;
+
+    public void start(){
+        getDataAndSetData();
+        showMenu();
+    }
 
 
     public void getDataAndSetData() {
