@@ -3,6 +3,7 @@ package co.edu.uptc.presenter;
 import co.edu.uptc.automata.model.Modelo;
 import co.edu.uptc.automata.model.automata.Automata;
 import co.edu.uptc.automata.model.jsonmanager.JSONManager;
+import co.edu.uptc.view.View;
 import lombok.AllArgsConstructor;
 
 import java.nio.file.Files;
