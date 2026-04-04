@@ -42,7 +42,8 @@ public class Presenter {
                 .toList());
         // Añadimos la opción de volver
         listaMenu.add("0. Volver al menú principal");
-        String[] menuAutomatas = listaMenu.toArray(new String[0]);        String option = "";
+        String[] menuAutomatas = listaMenu.toArray(new String[0]);
+        String option = "";
         while (!option.equals("0")) {
             option = view.showMessage(menuAutomatas);
             // Intentamos convertir la opción a un número para buscar en la lista
