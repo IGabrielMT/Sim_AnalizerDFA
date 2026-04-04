@@ -65,7 +65,8 @@ public class Presenter {
             }
         }
 
-    public void getDataAndSetData() {
+    }
+    private void getDataAndSetData() {
         if (!Files.exists(Paths.get("src/main/resources/automata.json"))) {
             System.out.println("No existe");
             JSONManager.createJSONFileByCollection("src/main/resources/automata.json",new ArrayList<>() );
