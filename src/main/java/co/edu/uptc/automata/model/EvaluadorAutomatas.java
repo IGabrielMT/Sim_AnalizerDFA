@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class EvaluadorDFA {
+public class EvaluadorAutomatas {
 
     public boolean evaluarCadena(Automata automata, String cadena) {
         if (automata == null || cadena == null) return false;
