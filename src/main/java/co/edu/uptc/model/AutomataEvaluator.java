@@ -15,7 +15,6 @@ public class AutomataEvaluator {
             return new EvaluationResult(false, traza);
         }
 
-        // Validar que todos los símbolos pertenecen al alfabeto
         for (char c : cadena.toCharArray()) {
             String simbolo = String.valueOf(c);
             if (!automata.getAlfabeto().contains(simbolo)) {
