@@ -1,4 +1,4 @@
-package co.edu.uptc.automata.view;
+package co.edu.uptc.view;
 
 import java.util.List;
 import java.util.Scanner;
@@ -8,9 +8,9 @@ public class View implements IView {
 
     @Override
     public int mostrarMenuInicio() {
-        System.out.println("=== Simulador de Autómatas Finitos ===");
-        System.out.println("1. Crear autómata");
-        System.out.println("2. Cargar y evaluar autómata");
+        System.out.println("=== Simulador de Automatas Finitos DFA ===");
+        System.out.println("1. Crear automata");
+        System.out.println("2. Cargar y evaluar automata");
         System.out.println("0. Salir");
         System.out.print("> ");
         String entrada = sc.nextLine();
@@ -22,7 +22,7 @@ public class View implements IView {
     }
 
     @Override
-    public void mostrarMensaje(String mensaje){
+    public void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
     }
 
@@ -36,7 +36,13 @@ public class View implements IView {
         System.out.println("Cadena evaluada: " + cadena);
         System.out.println(aceptada ? "Resultado: ACEPTADA" : "Resultado: RECHAZADA");
         if (trazabilidad != null && !trazabilidad.isEmpty()) {
-            System.out.println("Trazabilidad:");
+            boolean esErrorAlfabeto = trazabilidad.size() == 1 &&
+                    trazabilidad.get(0).startsWith("El simbolo");
+            if (esErrorAlfabeto) {
+                System.out.println("Motivo de rechazo:");
+            } else {
+                System.out.println("Trazabilidad:");
+            }
             for (String paso : trazabilidad) {
                 System.out.println("- " + paso);
             }
@@ -53,14 +59,14 @@ public class View implements IView {
     @Override
     public int mostrarMenuPrincipal() {
         System.out.println("Que desea hacer: (Inserte en consola)");
-        System.out.println("1. Verificar cadena con autómata");
+        System.out.println("1. Verificar cadena con automata");
         System.out.println("0. Salir");
         System.out.print("> ");
         String entrada = sc.nextLine();
         try {
             return Integer.parseInt(entrada);
         } catch (NumberFormatException e) {
-            mostrarError("Opción no válida, intente de nuevo.");
+            mostrarError("Opcion no valida, intente de nuevo.");
             return -1;
         }
     }

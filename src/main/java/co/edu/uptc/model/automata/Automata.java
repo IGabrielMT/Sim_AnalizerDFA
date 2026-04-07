@@ -1,6 +1,9 @@
-package co.edu.uptc.automata.model.automata;
+package co.edu.uptc.model.automata;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.Map;
@@ -12,7 +15,6 @@ import java.util.Map;
 public class Automata {
     private String nombre;
     private String descripcion;
-    private boolean isAFD;
     private List<String> estados;
     private List<String> alfabeto;
     private String estadoInicial;
@@ -21,6 +23,6 @@ public class Automata {
 
     @Override
     public String toString() {
-        return nombre + "  " + descripcion;
+        return nombre + " - " + descripcion;
     }
 }

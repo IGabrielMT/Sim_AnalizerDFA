@@ -1,4 +1,4 @@
-package co.edu.uptc.automata.model.jsonmanager;
+package co.edu.uptc.model.jsonmanager;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -8,17 +8,13 @@ import java.io.FileWriter;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.Collection;
 
 @SuppressWarnings("ALL")
 public class JSONManager {
+
     public static void createJSONFileByCollection(String fileName, Collection<?> collection) {
-        Gson gson = new GsonBuilder()
-                .registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
-                .registerTypeAdapter(Period.class, new PeriodAdapter())
-                .create();
+        Gson gson = new GsonBuilder().create();
         String json = gson.toJson(collection);
         try (FileWriter writer = new FileWriter(fileName)) {
             writer.write(json);
@@ -28,13 +24,10 @@ public class JSONManager {
     }
 
     public static Collection<?> createCollectionByJSONFile(String fileName, Class<?> clazz) {
-        Gson gson = new GsonBuilder()
-                .registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
-                .registerTypeAdapter(Period.class, new PeriodAdapter())
-                .create();
+        Gson gson = new GsonBuilder().create();
         try {
             String jsonContent = new String(Files.readAllBytes(Paths.get(fileName)));
-            if (jsonContent.length()>0) {
+            if (jsonContent.length() > 0) {
                 Type collectionType = TypeToken.getParameterized(Collection.class, clazz).getType();
                 return gson.fromJson(jsonContent, collectionType);
             }
@@ -43,6 +36,4 @@ public class JSONManager {
         }
         return null;
     }
-
-
 }

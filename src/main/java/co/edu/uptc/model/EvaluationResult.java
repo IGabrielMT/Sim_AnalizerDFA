@@ -1,4 +1,4 @@
-package co.edu.uptc.automata.model;
+package co.edu.uptc.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-public class ResultadoEvaluacion {
+public class EvaluationResult {
     private boolean aceptada;
     private List<String> traza;
 }

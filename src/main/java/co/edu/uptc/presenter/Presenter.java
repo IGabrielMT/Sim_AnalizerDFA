@@ -1,10 +1,10 @@
 package co.edu.uptc.presenter;
 
-import co.edu.uptc.automata.model.AutomataRepository;
-import co.edu.uptc.automata.model.Model;
-import co.edu.uptc.automata.model.ResultadoEvaluacion;
-import co.edu.uptc.automata.model.automata.Automata;
-import co.edu.uptc.automata.view.IView;
+import co.edu.uptc.model.automata.Automata;
+import co.edu.uptc.model.AutomataRepository;
+import co.edu.uptc.model.Model;
+import co.edu.uptc.model.EvaluationResult;
+import co.edu.uptc.view.IView;
 import lombok.AllArgsConstructor;
 
 import java.util.ArrayList;
@@ -146,7 +146,6 @@ public class Presenter {
         Automata automata = new Automata(
                 nombre,
                 descripcion,
-                true,
                 estados,
                 alfabeto,
                 estadoInicial,
@@ -182,11 +181,32 @@ public class Presenter {
                 int seleccion = Integer.parseInt(option);
                 if (seleccion > 0 && seleccion <= automatas.size()) {
                     Automata elegido = automatas.get(seleccion - 1);
-                    String cadena = view.solicitarEntrada("Ingrese la cadena a evaluar:");
-                    // MVP: la traza y el resultado vienen del Model, no se construyen en el Presenter.
-                    ResultadoEvaluacion resultado = model.evaluarCadena(elegido, cadena);
-                    view.mostrarResultadoEvaluacion(cadena, resultado.isAceptada(), resultado.getTraza());
-                    view.solicitarEntrada("Presione Enter para continuar...");
+                    int cantidadCadenas;
+                    while (true) {
+                        String cantidadEntrada = view.solicitarEntrada("¿Cuántas cadenas desea evaluar? (1-10):");
+                        try {
+                            cantidadCadenas = Integer.parseInt(cantidadEntrada);
+                            if (cantidadCadenas >= 1 && cantidadCadenas <= 10) {
+                                break;
+                            }
+                            view.mostrarError("La cantidad debe estar entre 1 y 10.");
+                        } catch (NumberFormatException e) {
+                            view.mostrarError("Por favor, inserte un número válido.");
+                        }
+                    }
+
+                    List<String> cadenas = new ArrayList<>();
+                    for (int i = 1; i <= cantidadCadenas; i++) {
+                        String cadena = view.solicitarEntrada("Ingrese la cadena #" + i + ":");
+                        cadenas.add(cadena);
+                    }
+
+                    for (String cadena : cadenas) {
+                        view.mostrarMensaje("----------------------------------------");
+                        EvaluationResult resultado = model.evaluarCadena(elegido, cadena);
+                        view.mostrarResultadoEvaluacion(cadena, resultado.isAceptada(), resultado.getTraza());
+                    }
+                    view.mostrarMensaje("----------------------------------------");
                 } else if (seleccion != 0) {
                     view.mostrarError("Opción inválida. Intente de nuevo.");
                 }

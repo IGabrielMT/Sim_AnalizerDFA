@@ -1,11 +1,10 @@
 package co.edu.uptc;
 
-import co.edu.uptc.automata.model.AutomataRepository;
-import co.edu.uptc.automata.model.Model;
-import co.edu.uptc.automata.view.View;
+import co.edu.uptc.model.AutomataRepository;
+import co.edu.uptc.model.Model;
+import co.edu.uptc.view.View;
 import co.edu.uptc.presenter.Presenter;
 
-import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
