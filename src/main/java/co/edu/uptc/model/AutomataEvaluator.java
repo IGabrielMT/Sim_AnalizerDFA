@@ -39,7 +39,7 @@ public class AutomataEvaluator {
             }
 
             String siguiente = destinos.get(0);
-            traza.add("δ(" + estadoActual + ", " + simbolo + ") -> " + siguiente);
+            traza.add("S(" + estadoActual + ", " + simbolo + ") -> " + siguiente);
             estadoActual = siguiente;
         }
 

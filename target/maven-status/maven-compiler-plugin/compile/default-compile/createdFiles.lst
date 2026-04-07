@@ -1,1 +1,10 @@
-co\edu\uptc\automata\view\View.class
+co\edu\uptc\model\jsonmanager\JSONManager.class
+co\edu\uptc\model\AutomataEvaluator.class
+co\edu\uptc\view\View.class
+co\edu\uptc\Main.class
+co\edu\uptc\model\EvaluationResult.class
+co\edu\uptc\model\automata\Automata.class
+co\edu\uptc\view\IView.class
+co\edu\uptc\model\Model.class
+co\edu\uptc\model\AutomataRepository.class
+co\edu\uptc\presenter\Presenter.class
